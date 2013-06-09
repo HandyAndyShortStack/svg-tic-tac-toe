@@ -1,4 +1,4 @@
 svgsweeper
 ==========
 
-demonstration of using in rails views
+This little game uses rails views to dynamically generate svg page content.
