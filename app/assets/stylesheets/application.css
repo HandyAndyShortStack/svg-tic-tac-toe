@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+line, circle {
+  stroke: black;
+  stroke-width: 5;
+  stroke-linecap: round;
+  fill-opacity: 0;
+}

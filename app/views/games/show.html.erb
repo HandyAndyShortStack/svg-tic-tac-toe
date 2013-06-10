@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @game.X %>(X) vs. <%= @game.O %>(O)</h2>
+
+<% if !@game.board %>
+  <%= link_to "Start Game", url_for(@game) + "?start_game=true" %>
+<% else %>
+  <%= render partial: "board", locals: { board: @game.board } %>
+<% end %>

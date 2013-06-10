@@ -1,0 +1,25 @@
+<svg xmlns="http //www.w3.org/2000/svg" height="300" width="300">
+
+  <line x1="100" x2="100" y1="0" y2="300" />
+  <line x1="200" x2="200" y1="0" y2="300" />
+  <line x1="0" x2="300" y1="100" y2="100" />
+  <line x1="0" x2="300" y1="200" y2="200" />
+
+  <% winner = board.winner %>
+
+  <% squares.each do |square| %>
+    <% if board[square] %>
+      <%= render partial: board[square].downcase, locals: { square: square } %>
+    <% elsif !winner %>
+      <%= content_tag :a, :"xlink:href" => url_for(@game) + "?move=" + square do %>
+        <%= tag "rect", x: x_offset(square), y: y_offset(square), 
+            height: 100, width: 100, opacity: 0 %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if winner %>
+    <script>$(function(){alert("<%= @game.send(winner) %> wins!");});</script>
+  <% end %>
+
+</svg>

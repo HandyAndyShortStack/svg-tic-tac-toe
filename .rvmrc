@@ -1,1 +1,1 @@
-rvm use 1.9.3@svgsweeper
+rvm use 1.9.3@tic-tac-toe --create
